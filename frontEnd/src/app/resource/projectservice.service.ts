@@ -45,7 +45,7 @@ export class ProjectserviceService {
     formData.append('Mob',this.selectmodel.Mob);
     formData.append('file',image)
    
-    return this.http.post(this.UpdateDataUrl+`${this.selectmodel.Id}`,formData);
+    return this.http.put(this.UpdateDataUrl+`/${this.selectmodel.Id}`,formData);
   }
 
   

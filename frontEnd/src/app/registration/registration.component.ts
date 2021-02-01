@@ -91,6 +91,8 @@ export class RegistrationComponent implements OnInit {
 
     this.service.selectmodel=data;
 
+       this.displaySubmit="none";
+      this.displayUpdate="block";
   }
 
 }

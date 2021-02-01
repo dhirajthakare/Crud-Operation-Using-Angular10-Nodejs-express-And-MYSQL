@@ -22,7 +22,6 @@ export class InformationComponent implements OnInit {
 
     FetchData(){
       this.service.GetData().subscribe((res)=>{
-        console.log(res);
         this.service.storeData = res as Model[];
       })
     }
