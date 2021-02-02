@@ -34,21 +34,21 @@ export class RegistrationComponent implements OnInit {
 
     // console.log(form.value.file);
     this.service.postData(formData,this.image).subscribe((Response)=>{
-    this.resetdata();
+    this.resetdata(form);
     
       
     })
 
    
   }
-  update(){
+  update(form:NgForm){
 
     const formData = new FormData();
 
     // console.log(form.value.file);
     this.service.Update(formData,this.image).subscribe((res)=>{
       console.log(res);
-      this.resetdata();
+      this.resetdata(form);
       this.displaySubmit="block";
       this.displayUpdate="none";
       this.Editdata="";
@@ -65,6 +65,7 @@ export class RegistrationComponent implements OnInit {
   resetdata(form?:NgForm){
     if(form)
     form.reset();
+    
     this.service.selectmodel = {
       Id:null,
       Name:"",
