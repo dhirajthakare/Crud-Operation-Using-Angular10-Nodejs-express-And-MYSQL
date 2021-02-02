@@ -44,4 +44,18 @@ this.router.navigate(['registration'],{
 })
 
     }
+
+    FilterSearch(search){
+
+      if(search.value !== ""){
+      
+      this.service.Searchdata(search.value).subscribe((res)=>{
+        this.service.storeData=res as Model[];
+        
+      })
+    }else{
+      
+      this.FetchData();
+    }
+    }
 }

@@ -13,7 +13,7 @@ export class ProjectserviceService {
   readonly fetchDataUrl = "http://localhost:3000/Fetchdata";
   readonly DeleteDataUrl = "http://localhost:3000/deleteData";
   readonly UpdateDataUrl = "http://localhost:3000/edit";
-
+  readonly SearchDataUrl = "http://localhost:3000/search";
 
 
 
@@ -46,6 +46,10 @@ export class ProjectserviceService {
     formData.append('file',image)
    
     return this.http.put(this.UpdateDataUrl+`/${this.selectmodel.Id}`,formData);
+  }
+
+  Searchdata(search){
+    return this.http.get(this.SearchDataUrl+`/${search}`);
   }
 
   

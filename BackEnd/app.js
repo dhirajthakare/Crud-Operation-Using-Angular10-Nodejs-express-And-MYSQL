@@ -96,7 +96,7 @@ app.delete('/deleteData/:id', function (req, res) {
 // Search Data Api
 app.get("/search/:name", function (req, res) {
 
-    con.query(` select * from technology where concat(Id,Name,Email.ImageUrl) like "%${req.params.name}%" `, function (err, responce) {
+    con.query(` select * from details where concat(Id,Name,Email) like "%${req.params.name}%" `, function (err, responce) {
         if (err) {
             console.log(err);
         } else {
